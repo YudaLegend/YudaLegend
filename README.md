@@ -10,7 +10,7 @@
 ###
 
 <div align="center">
-  <img height="150" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTAzMzVyZGFkdmFlbnlvdGY2ZXVuMDQwMDJyeDcycnpnd3R1NDZodyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XHq7zY9UjA71l150ZZ/giphy.gif"  />
+  <img height="150" src="https://github.com/YudaLegend/YudaLegend/blob/main/giphy.gif"  />
 </div>
 
 ###
