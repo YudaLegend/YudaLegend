@@ -1,4 +1,4 @@
-<h2 align="left">Hi 👋! My name is Yuda and I'm a programmer apassionater for games</h2>
+<h2 align="left">Hi 👋! My name is Yuda and I'm a programmer and Data Enginnering</h2>
 
 ###
 
