@@ -1,4 +1,3 @@
-<h2 align="left">Hi 👋! My name is Yuda and I'm a programmer and Data Scientist</h2>
 
 ###
 
