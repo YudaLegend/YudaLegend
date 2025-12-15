@@ -1,13 +1,11 @@
-# Hi there, I'm [YudaLegend]! 👋
+# Hi there, I'm YudaLegend! 👋
 
 ### 👨‍💻 Software Engineer | 🚀 Tech Enthusiast | ☕ Coffee Lover
 
-I am a passionate developer from **[Location]** focused on building scalable web applications and exploring AI tools.
+I am a passionate developer from **Barcelona** focused on building scalable web applications and exploring AI tools.
 
-- 🔭 I’m currently working on **[Project Name]**
-- 🌱 I’m currently learning **Rust and GraphQL**
+- 🌱 I’m currently learning **AI Techniques**
 - 👯 I’m looking to collaborate on **Open Source projects**
-- 💬 Ask me about **React, Node.js, and Cloud Architecture**
 - ⚡ Fun fact: **I can type 100 wpm!**
 
 ---
