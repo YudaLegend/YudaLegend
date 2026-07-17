@@ -1,88 +1,63 @@
-<h1 align="center">Hi, I'm Haonan Jin (YudaLegend) 👋</h1>
+# Haonan Jin
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=33CCFF&center=true&vCenter=true&width=520&lines=AI+Engineer+%C2%B7+LLMs+%26+Agents;MSc+Data+Science+%40+UPC+Barcelona;I+ship+models+to+production+%E2%80%94+with+evals" alt="Typing SVG" />
-</p>
+**AI Engineer · MSc Data Science (UPC Barcelona)** — I build LLM systems that run in production, and I measure them.
 
-<p align="center">
-  <a href="mailto:a779052016@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HERE"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <img src="https://img.shields.io/badge/Barcelona,%20Spain-🌍-lightgrey?style=for-the-badge" />
-</p>
+📍 Barcelona · 📧 [a779052016@gmail.com](mailto:a779052016@gmail.com) · 💼 [LinkedIn](https://www.linkedin.com/in/YOUR-LINKEDIN-HERE) · 🎯 Open to AI Engineer / Data Scientist roles
 
 ---
 
-### 👨‍💻 About Me
+## What I've built
 
-MSc in **Data Science** @ UPC Barcelona (thesis 9/10) · BSc in Computer Science · Exchange @ Beihang University, Beijing (GPA 3.77/4)
+### 🤖 [TaskFlow Support Agent](https://github.com/YudaLegend/taskflow-support-agent) — production LLM agent, live demo
+A customer-support agent built the way production systems should be: **LangGraph ReAct** loop with typed tools, RAG over ChromaDB, guardrails against prompt injection, PII redaction, **FastAPI + SSE** streaming API.
+- **Observability**: Langfuse traces per request (tokens, latency, cost); user feedback flows back as trace scores
+- **Evals, not vibes**: 15 deterministic trajectory scenarios, 25-question retrieval benchmark, A/B backend comparison (Groq vs DeepSeek — 14/15 vs 12/15, 2.2× faster), and one documented negative result (hybrid BM25+dense didn't help — kept the data, dropped the feature)
+- **Ships properly**: multi-stage Docker, docker-compose (8 services), GitHub Actions CI (lint + 33 tests), deployed on HuggingFace Spaces
 
-- 🏥 Built an **LLM clinical-data extraction pipeline** with Hospital Clínic de Barcelona — Pydantic schema validation, multi-provider inference (AWS Bedrock, Ollama), 150-run evaluation matrix, GDPR-compliant deployment
-- 🤖 I build **production LLM systems**: agents, RAG, guardrails, observability, CI/CD — and I always measure them (LLM-as-judge + deterministic evals)
-- 💼 Ex AI Software Engineer intern @ Colbai Advisors (private RAG pipelines on Azure for healthcare)
-- 🗣️ Spanish, Catalan & Chinese (native) · English (fluent)
-- 🎯 Open to **AI Engineer / Data Scientist** roles
+`LangGraph` `ChromaDB` `FastAPI` `MongoDB` `Langfuse` `Docker` `CI/CD`
 
----
+### 🏥 [Meditab](https://github.com/YudaLegend/meditab) — LLM clinical extraction (master's thesis, 9/10)
+Built with **Hospital Clínic de Barcelona**: converts unstructured Catalan psychiatric notes into structured medication histories.
+- Pydantic schemas with cross-field invariants that intercept semantically invalid outputs
+- Multi-provider inference layer (Gemini, Groq, Ollama → AWS Bedrock in ~30 lines of config)
+- Field-level evaluation framework (LLM-as-judge + ROUGE): **macro-F1 0.935**; 150-run experiment matrix across 5 models on 10 real patient histories
+- Developed synthetic-first for **GDPR** compliance, deployed in the hospital's secure AWS environment
 
-### 🚀 Featured Projects
+`Pydantic` `MCP` `AWS Bedrock` `Ollama` `LLM evaluation`
 
-| Project | What it is | Stack |
-|---|---|---|
-| 🤖 [**taskflow-support-agent**](https://github.com/YudaLegend/taskflow-support-agent) | Production-shaped support agent: ReAct loop, RAG, guardrails, SSE streaming API, Langfuse tracing, 33-test CI, A/B-tested backends. **Live on HuggingFace Spaces** | LangGraph · ChromaDB · FastAPI · Docker |
-| 🏥 [**meditab**](https://github.com/YudaLegend/meditab) | Master's thesis: structured medication-history extraction from Catalan psychiatric notes with LLMs. Field-level eval framework, macro-F1 0.935 | Pydantic · MCP · AWS Bedrock · Ollama |
-| 🎮 [**Data-Mining-Final**](https://github.com/YudaLegend/Data-Mining-Final) | Context-aware gaming toxicity detection: BERT + learnable soft prompts, adversarial contrastive pairs, token-swap sensitivity tests, 92–94% acc | PyTorch · HuggingFace Transformers |
-| 🌐 [**kbin**](https://github.com/YudaLegend/kbin) | Full-stack Reddit-style platform: Django REST API + React SPA, OAuth, S3 media, OpenAPI docs. Team project (agile) | Django · DRF · React · AWS S3 |
-| 📊 [**Steam-Games-Satisfaction**](https://github.com/hangui11/Steam-Games-Satisfaction) | End-to-end ML pipeline over 150k+ Steam games: zone architecture, data quality, CV + hyperparameter tuning, unit tests | Python · DuckDB · scikit-learn |
-| ⚡ [**BDM**](https://github.com/brunabarraquer/BDM) | Lakehouse with batch + real-time paths: Delta Lake, Spark, Airflow, Kafka streaming, Great Expectations, recommender system | PySpark · Kafka · Airflow · Streamlit |
+### 🎮 [Context-Aware Toxicity Detection](https://github.com/YudaLegend/Data-Mining-Final) — BERT beyond the black box
+Same word, different meaning: "camper" is an insult in FPS, neutral in MOBA. Solved with **learnable soft-prompt embeddings** encoding game genre as context.
+- 70k dual-source samples + ~1,000 hand-built adversarial contrastive pairs to break keyword shortcuts
+- Interpretability: token-swap sensitivity tests (does the prediction flip when context changes?) + t-SNE embedding visualization
+- **92–94% accuracy** with two-phase freeze-unfreeze training on a single RTX 3060
 
----
+`PyTorch` `HuggingFace Transformers` `fine-tuning` `interpretability`
 
-### 🛠️ Tech Stack
+### ⚡ [Lakehouse Pipeline](https://github.com/brunabarraquer/BDM) — batch + streaming data platform
+3-tier **Delta Lake** with full versioning; PySpark batch transforms orchestrated by Airflow (cold path), **Kafka** real-time ingestion driving live leaderboards (hot path), Great Expectations quality gates quarantining bad batches, collaborative-filtering recommender on top.
 
-**AI / LLMs**
+`PySpark` `Kafka` `Airflow` `Delta Lake` `Great Expectations` `Streamlit`
 
-<p align="left">
-  <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" />
-  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" />
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/🤗%20Transformers-FFD21E?style=for-the-badge&logoColor=black" />
-  <img src="https://img.shields.io/badge/ChromaDB-5C33CC?style=for-the-badge&logoColor=white" />
-  <img src="https://img.shields.io/badge/Langfuse-000000?style=for-the-badge&logoColor=white" />
-  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" />
-</p>
+### 🌐 [kbin](https://github.com/YudaLegend/kbin) — full-stack platform (team of 4, agile)
+Reddit-style content aggregator: **Django REST** API (OpenAPI spec, OAuth, S3 media) + **React** SPA. Deployed on Fly.io + Vercel.
 
-**Data Engineering**
+`Django` `DRF` `React` `AWS S3`
 
-<p align="left">
-  <img src="https://img.shields.io/badge/Apache%20Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white" />
-  <img src="https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" />
-  <img src="https://img.shields.io/badge/Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white" />
-  <img src="https://img.shields.io/badge/Delta%20Lake-003366?style=for-the-badge&logo=delta&logoColor=white" />
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
-  <img src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black" />
-</p>
-
-**Backend & DevOps**
-
-<p align="left">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
-  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
-  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" />
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white" />
-  <img src="https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white" />
-</p>
+### 📊 More
+- [Steam Games ML pipeline](https://github.com/hangui11/Steam-Games-Satisfaction) — end-to-end over 150k+ games: zone architecture, data quality, CV + hyperparameter tuning, per-module unit tests
+- [Multivariate analysis in R](https://github.com/hangui11/League-of-Legends-Analysis) — PCA, MDS, MCA, clustering, discriminant analysis (FactoMineR)
 
 ---
 
-### 📊 GitHub Stats
+## Background
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YudaLegend&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" />
-</p>
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YudaLegend&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
-</p>
+- 🎓 **MSc Data Science** — UPC Barcelona (2024–2026) · GPA 8/10, thesis 9/10 · exchange semester at **Beihang University**, Beijing (GPA 3.77/4)
+- 🎓 **BSc Computer Science** — UPC Barcelona (2020–2024)
+- 💼 **AI Software Engineer intern** @ Colbai Advisors — private RAG ingestion pipelines on Azure for healthcare-compliance clients
+- 🗣️ Spanish, Catalan, Chinese (native) · English (fluent)
+
+## How I work
+
+Every model I ship comes with an evaluation harness. Every service comes with traces. I'd rather document a negative result than ship an unmeasured improvement.
+
+**Stack:** Python · SQL · C++ · PyTorch · LangGraph/LangChain · FastAPI · Spark · Kafka · Airflow · Docker · GitHub Actions · AWS · Azure
